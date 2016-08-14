@@ -1,2 +1,4 @@
 *.pyc
 tryout/
+views/
+data/temp

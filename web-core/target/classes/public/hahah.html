@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8"> <!-- Add chinese character support -->
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <link type="text/css" rel="stylesheet" href="css/details.css"></link>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script>
+      var app = angular.module("appdetails", []);
+      app.controller("detail_data_feed", function($scope, $http) {
+        $scope.app = ${app};
+
+      $scope.related = [
+{ "intro" : "史上最受欢迎的免费手机流量助手! 喜大普奔，流量不清零啦!安装流量宝，从此告别流量清零！ 【赚流量】 每天签到送流量；装应用、下游戏，赚免费流量；地铁、公交玩猜图、看视频轻松得流量；天翼积分换流量，更有多种送流量活动等你来参加！  【兑流量】 业界首家支持购买、积分兑换、免费赚取电信、移动、联通三网流量、话费产品，自动充值、极速", "score" : 8, "top5App" : "[C20252, C10269239, C183901, C5980, C10196888]", "appid" : "C10114178", "url" : "http://appstore.huawei.com:80/app/C10114178", "title" : "流量宝", "thumbnail_url" : "http://appimg.hicloud.com/hwmarket/files/application/icon144/72f97ca71d3c485ca4fec994579666ab.png", "developer" : "世纪龙信息网络有限责任公司" },
+{ "intro" : "我们的价格来自国内各大超市场、商城，也有参考互联网各商城，若商品价格有误请及时联系我们改价或删除，给您造成的影响深感抱歉。QQ：4009981389（选择开发者客服） 也可以将营业执照、以及需要修改的条码信息至邮箱：wanghui@tongbu.com 我们将第一时间为您处理。谢谢   二维码扫描软件是专业的商品条形码（条码）扫描、二", "score" : 8, "top5App" : "[C20252, C10269239, C5980, C10241662, C10221865]", "appid" : "C10196888", "url" : "http://appstore.huawei.com:80/app/C10196888", "title" : "二维码扫描", "thumbnail_url" : "http://appimg.hicloud.com/hwmarket/files/application/icon144/85f1292be4fa43c0b952445313870ba8.png", "developer" : "厦门同步网络有限公司" },
+{ "intro" : "【掌上京东 实惠轻松 2亿用户购物首选客户端】 1、新人特权：客户端新人首单满79元送79元大礼包 2、专享特权：每天多款客户端专享价商品 3、闪电到货：京东自营商品211限时达   【真实用户评价】 京东商城网购评价相对比较好。货真价实，物流也比较快，客服人员比较热情，最重要就是活动多。京东商城值得信赖——by“mC烟味", "score" : 8, "top5App" : "[C10269239, C10196888, C5980, C10241662, C10221865]", "appid" : "C20252", "url" : "http://appstore.huawei.com:80/app/C20252", "title" : "京东", "thumbnail_url" : "http://appimg.hicloud.com/hwmarket/files/application/icon144/365b65540dff47619efd1ec5bd682dc8.png", "developer" : "北京京东叁佰陆拾度电子商务有限公司" },
+{ "intro" : "职多多-求职招聘找工作:上职多多，找真工作。 ====================================== 保证100%真工作，100%真赔付的手机求职软件； 响应最快的手机求职软件，最值得信赖的求职找工作平台。 这里有全国最真实、最新鲜的岗位、工作信息\t 这里有工作时间报名30分钟内即刻响应的专属就业服务顾问； 这里有全国250", "score" : 9, "top5App" : "[C20252, C183901, C10114178, C10196888, C10269239]", "appid" : "C2217", "url" : "http://appstore.huawei.com:80/app/C2217", "title" : "我查查", "thumbnail_url" : "http://appimg.hicloud.com/hwmarket/files/application/icon144/370f084818944141af92af593cafd6c4.png", "developer" : "我查查信息技术（上海）有限公司" },
+{ "intro" : "肯德基官方手机客户端，提供优惠券/外送订餐/餐厅查询等实用功能，更有丰富的有奖活动等着你！ 1、优惠券：第一时间获取官方版； 2、宅急送订餐：天天优惠，手机上随时订餐； 3、当地活动：新品、促销、活动抢鲜看； 4、附近餐厅：KFC餐厅地图，是否有Wi-Fi、24小时，一查便知； 5、发现：告诉你KFC的最新变化，比如开通免费Wi", "score" : 7, "top5App" : "[C20252, C10196888, C5980, C2217, C10114178]", "appid" : "C6015363", "url" : "http://appstore.huawei.com:80/app/C6015363", "title" : "肯德基", "thumbnail_url" : "http://appimg.hicloud.com/hwmarket/files/application/icon144/0e130630d4e54ecca251f91a31bde6ff.png", "developer" : "百胜（中国）投资有限公司" }
+      ];
+      });
+
+
+    </script>
+
+  </head>
+  <body ng-app="appdetails" ng-controller="detail_data_feed">
+
+    <!-- Bootstrap navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container"> <!-- Can use container-fluid to extend the view into full width -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">App Store</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Bootstrap navbar ends here -->
+	
+    <div class="container">
+      <div class="row">
+        <div class="details_main">
+          <!-- <div class=“logo”>
+            <img src={{app.thumbnail_url}} /></td>
+          </div>
+          <div class="logo_info">
+            <p>{{app.title}}</p>
+            <p>developer: {{app.developer}}</p>
+            <p>User Review: {{app.score}}</p>
+          </div> -->
+          <h1>{{app.title}}</h1>
+          <h2>By {{app.developer}}</h2>
+
+          <div class="logo">
+            <img src={{app.thumbnail_url}} />
+          </div>
+          <div class="descriptions">
+            <p>{{app.intro}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="details_other_info">
+          <h2>Download Link</h2>
+          <p><a href={{app.url}}>{{app.url}}</a></p>
+          <h2>Similar Apps</h2>
+          <!-- create a table that contains top 5 apps in a table -->
+            <div class="top5App">
+            <ul>
+              <li ng-repeat="item in related">
+                <div class="app-snippet">
+                  <a href="/"><img src={{item.thumbnail_url}} /></a>
+                  <h3>{{item.title | limitTo: 8}}</h3>
+                  <h4>评分：{{item.score}}</h4>
+                </div>
+                <!-- <div class="app-snippet">
+                    <div class="div1"><img src={{app.thumbnail_url}} /></div>
+                    <div class="div2"><p>{{app.title}}<br>{{app.score}}</p></div>
+                    <div class="div3"></div>
+                  </p>
+                </div> -->
+              </li>
+            </ul>
+            </div>
+              <!-- <tr> -->
+
+                <!-- <li ng-repeat="id in app.test">
+                  <!-- <td ng-repeat="id in app.test"> -->
+                    <!-- Need to have some functionality to get the associated information for each of the apps -->
+
+                <!-- </td> -->
+              <!-- </tr> -->
+            <!-- </table> -->
+        </div>
+      </div>
+    </div>  <!-- Outer div -->
+
+  </body>
+
+
+</html>

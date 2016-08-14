@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<!--  <html xmlns:th="http://www.thymeleaf.org"> -->
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8"></meta>
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/singleapp.css}"></link>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+    <script>
+    // <![CDATA[
+    	var app = angular.module('singleApp', []);
+		app.controller('singleApp-controller', function($scope, $http, $location) {
+		    var myUrl = $location.absUrl();
+		 	myUrl = myUrl.split('greeting/')[1];
+		 	$scope.myUrl = myUrl;
+		 	var apirequest = '/api/app/' + myUrl;
+		 	$scope.related = [];
+		 	$http.get('/api/app/' + myUrl).
+			    success(function(data) {
+			    	if (data.top5App) {
+// 			    		data.top5App = data.top5App.substr(1, data.top5App.length - 2).replace(/ /g,'').split(",");
+			    		data.top5App = data.top5App.substr(1, data.top5App.length - 2).replace(/ /g,'');
+			    	}
+			        $scope.app = data;
+				 	if ($scope.app.top5App) {
+				 			// Send request to REST API
+				 			$http.get('/api/apps/' + $scope.app.top5App).
+				 				success(function(apps) {
+				 					$scope.related = apps;
+				 				});
+			 		}
+			    	});
+		});
+  	// ]]>
+	</script>
+
+
+</head>
+<body ng-app="singleApp" ng-controller="singleApp-controller">
+
+    <!-- Bootstrap navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container"> <!-- Can use container-fluid to extend the view into full width -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">App Store</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Bootstrap navbar ends here -->
+
+    <div class="container">
+      <div class="row">
+        <div class="details_main">
+          <h1>{{app.title}}</h1>
+          <h2>By {{app.developer}}</h2>
+
+          <div class="logo">
+            <img src= "{{app.thumbnail_url}}" />
+          </div>
+          <div class="descriptions">
+            <p>{{app.intro}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="details_other_info">
+          <h2>Download Link</h2>
+          <p><a href="{{app.url}}">{{app.url}}</a></p>
+          <h2>Similar Apps</h2>
+          <!-- create a table that contains top 5 apps in a table -->
+            <div class="top5App">
+            <ul>
+              <li ng-repeat="item in related">
+                <div class="app-snippet">
+                  <a href="/"><img src= "{{item.thumbnail_url}}" /></a>
+                  <h3>{{item.title | limitTo: 8}}</h3>
+                  <h4>评分：{{item.score}}</h4>
+                </div>
+              </li>
+            </ul>
+            </div>
+        </div>
+      </div>
+    </div>  <!-- Outer div -->
+
+  </body>
+
+</html>

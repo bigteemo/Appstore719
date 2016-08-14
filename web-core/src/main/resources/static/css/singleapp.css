@@ -1,0 +1,66 @@
+div.details_main .descriptions p {
+  font-size: 1.5em;
+}
+
+div.logo img {
+  float: left;
+  margin-right: 10px
+}
+
+/*div.app-snippet  img {
+  float：left;
+  margin-right: 10px;
+}*/
+
+/*.div1 {
+  float: left;
+}*/
+
+div.top5App {
+  border: 2px dashed;
+}
+
+div.details_other_info ul {
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+div.details_other_info ul > li{
+  display: inline-block;
+  width: 20%;
+  margin: auto;
+}
+
+div.details_other_info ul > li .app-snippet {
+  width: 100%;
+  margin: auto;
+}
+
+.div1 {
+  float: left;
+  display: block;
+  margin:10px;
+}
+/*table {
+  width: 100%;
+}
+
+td img {
+  display: block;
+  float: left;
+  width: 20%;
+  height: auto;
+}*/
+
+/*.div3 {
+  clear: left;
+}*/
+
+/*div.app-snippet-info {
+  float: right;
+  display：inline;
+}*/
+/*div.descriptions {
+  float: right;
+}*/

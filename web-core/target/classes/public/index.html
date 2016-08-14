@@ -23,7 +23,7 @@
           <a class="navbar-brand" href="#">App Store</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="/">Home</a></li>
           <li><a href="#">Explore</a></li>
           <li><a href="#">Developer</a></li>
         </ul>
@@ -40,7 +40,7 @@
           </div>
           <ul class="applist">
             <li ng-repeat="app in apps">
-              <a href="/greeting/{{app.appid}}">
+              <a href="/app/{{app.appid}}">
                 <img src={{app.thumbnail_url}} />
                 <p>{{app.title | limitTo : 8}}</p>
               </a>

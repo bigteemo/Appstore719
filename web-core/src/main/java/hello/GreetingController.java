@@ -19,14 +19,15 @@ class GreetingController2 {
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        return "greeting";
+        return "singleapp";
     }
     
-    @RequestMapping("/greeting/{id}")
-    public String Detailedgreeting(@PathVariable("id") String id, Model model) {
+    @RequestMapping("/app/{id}")
+    public String Detailedgreeting(@PathVariable("id") String id, ModelMap model) {
     	model.addAttribute("appid", id);
-    	return "greeting";
+    	return "singleapp";
     }
+    
     
 }
 
@@ -36,21 +37,6 @@ public class GreetingController {
 
 	@Autowired
 	private AppRepository repository;
-	
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
-
-//    @RequestMapping("/greeting")
-//    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-//        return new Greeting(counter.incrementAndGet(),
-//                            String.format(template, name));
-//    }
-    
-    @RequestMapping("/testjson")
-    public Appinfo getCustomer() {
-    	Appinfo res = repository.findByAppid("C10000291");
-    	return res; 
-    }
     
     @RequestMapping("/api/Top20")
     public List<Appinfo> mainPageApps() {
@@ -64,21 +50,11 @@ public class GreetingController {
     	return res;
     }
     
-    
     @RequestMapping(value = "api/apps/{applist}", method = RequestMethod.GET)
     public List<Appinfo> queryAppList(@PathVariable("applist") String applist) {
     	String[] arg = applist.split(",");
     	List<Appinfo> res = repository.findByAppidIn(arg);
     	return res;
     }
-    
-//    @RequestMapping(value = "/{appid}", method = RequestMethod.GET)
-//    public String detailPageApp(@PathVariable("appid") String appid, ModelMap model) {
-//    	Appinfo res = repository.findByAppid(appid);
-//    	
-////    	model.addAttribute("app", res);
-//    	// Here it returns a jsp file in a string instead
-//    	return "hahah";
-//    }
     
 }

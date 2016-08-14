@@ -12,7 +12,7 @@
     	var app = angular.module('singleApp', []);
 		app.controller('singleApp-controller', function($scope, $http, $location) {
 		    var myUrl = $location.absUrl();
-		 	myUrl = myUrl.split('greeting/')[1];
+		 	myUrl = myUrl.split('app/')[1];
 		 	$scope.myUrl = myUrl;
 		 	var apirequest = '/api/app/' + myUrl;
 		 	$scope.related = [];
@@ -46,12 +46,12 @@
           <a class="navbar-brand" href="#">App Store</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="/">Home</a></li>
         </ul>
       </div>
     </nav>
     <!-- Bootstrap navbar ends here -->
-
+	
     <div class="container">
       <div class="row">
         <div class="details_main">
@@ -76,7 +76,7 @@
             <ul>
               <li ng-repeat="item in related">
                 <div class="app-snippet">
-                  <a href="/"><img src= "{{item.thumbnail_url}}" /></a>
+                  <a href="/app/{{item.appid}}"><img src= "{{item.thumbnail_url}}" /></a>
                   <h3>{{item.title | limitTo: 8}}</h3>
                   <h4>评分：{{item.score}}</h4>
                 </div>

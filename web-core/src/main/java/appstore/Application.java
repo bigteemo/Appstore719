@@ -1,4 +1,4 @@
-package hello;
+package appstore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +10,7 @@ public class Application implements CommandLineRunner{
 	
 	@Autowired
 //	private CustomerRepository repository;
-	private AppRepository repository;
+//	private AppRepository repository;
 	
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -18,7 +18,7 @@ public class Application implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(repository.findByAppid("C10000291"));
+//		System.out.println(repository.findByAppid("C10000291"));
 //		System.out.println("Customers found with findByLastName('Smith'):");
 //		System.out.println(repository.findByFirstName("Alice"));
 	}

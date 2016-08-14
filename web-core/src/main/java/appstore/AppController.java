@@ -1,4 +1,4 @@
-package hello;
+package appstore;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-class GreetingController2 {
+class AppControllerRenderTemplates {
 
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
@@ -33,7 +33,7 @@ class GreetingController2 {
 
 @RestController
 //@Controller
-public class GreetingController {
+public class AppController {
 
 	@Autowired
 	private AppRepository repository;
